@@ -1,9 +1,272 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Hola</title>
-</head>
-<body>
-	<h2>Hola</h2>
-</body>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#F54D27">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Conoce sobre el manejador de versiones rapido Git.">
+        <title>Git</title>
+        <link rel="shortcut icon" href="images/git-logo.png" type="image/png">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/baguetteBox.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-git sticky-top">
+            <a class="navbar-brand" href="/">
+                <img src="images/gi-whitet-logo.png" width="30" height="30" class="d-inline-block align-top" alt="Navbar logo" loading="lazy">&nbsp;
+                <strong>Git</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a id="cvs-option" class="nav-link" href="#cvs">SCV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="git-option" class="nav-link" href="#git">Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="command-option" class="nav-link" href="#command">Comando básicos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="install-option" class="nav-link" href="#install">Instalación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="github-option" class="nav-link" href="#github">GitHub Pages</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <header class="pt-3 py-3 d-flex justify-content-center">
+            <img src="images/git-logo.png" alt="Header git" width="120" height="120">
+        </header>
+        <section id="cvs" class="pb-5">
+            <div class="container pt-3 pb-3 text-center">
+                <h4>Sistema de control de versiones</h4>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <nav class="cvs">
+                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-what-tab" data-toggle="tab" href="#nav-what" role="tab" aria-controls="nav-what" aria-selected="true">¿Qué es?</a>
+                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Características</a>
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Ventajas</a>
+                            </div>
+                        </nav>
+                        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                            <div class="tab-pane fade show w-100 active" id="nav-what" role="tabpanel" aria-labelledby="nav-what-tab">
+                                <p class="container" style="text-align: justify;">Un control de versiones es un sistema que registra los cambios realizados en un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante. Aunque en los ejemplos de este libro usarás archivos de código fuente como aquellos cuya versión está siendo controlada, en realidad puedes hacer lo mismo con casi cualquier tipo de archivo que encuentres en una computadora.<br><br>Dicho sistema permite regresar a versiones anteriores de los archivos, regresar a una versión anterior del proyecto completo, comparar cambios a lo largo del tiempo, ver quién modificó por última vez algo que pueda estar causando problemas, ver quién introdujo un problema y cuándo, y mucho más. Usar un VCS también significa generalmente que si arruinas o pierdes archivos, será posible recuperarlos fácilmente.</p>
+                            </div>
+                            <div class="tab-pane fade w-100" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <p class="container" style="text-align: justify;">Un sistema de control de versiones debe proporcionar:</p>
+                                <div class="container">
+                                    <ul class="container">
+                                        <li>Mecanismo de almacenamiento de los elementos que deba gestionar (ej. archivos de texto, imágenes, documentación...).</li>
+                                        <li>Posibilidad de realizar cambios sobre los elementos almacenados (ej. modificaciones parciales, añadir, borrar, renombrar o mover elementos).</li>
+                                        <li>Registro histórico de las acciones realizadas con cada elemento o conjunto de elementos (normalmente pudiendo volver o extraer un estado anterior del producto).</li>
+                                    </ul>
+                                </div>
+                                <p class="container" style="text-align: justify;">Aunque no es estrictamente necesario, suele ser muy útil la generación de informes con los cambios introducidos entre dos versiones, informes de estado, marcado con nombre identificativo de la versión de un conjunto de ficheros, etc.</p>
+                            </div>
+                            <div class="tab-pane fade w-100" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <p class="container" style="text-align: justify;">Utilizar un sistema de control de versiones tiene, entre otras, las siguientes ventajas:</p>
+                                <div class="container">
+                                    <ul class="container">
+                                        <li>Permite mantener un historial de todo el desarrollo del proyecto.</li>
+                                        <li>Añade trazabilidad al desarrollo de software, ya que se puede ver qué cambios se han hecho en el código en cada versión.</li>
+                                        <li>Muestra mucha información estadística de cómo se está desarrollando el proyecto (principales autores, número de versiones, cambios, etc.), y que archivos se han editado o eliminado.</li>
+                                        <li>Facilita mucho el trabajo en equipo.</li>
+                                        <li>Permite desarrollar varias versiones de un mismo programa a la vez.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="git">
+            <div class="container py-3">
+                <div class="row">
+                    <div class="col-12 py-2 text-center">
+                        <h3>¿Qué es Git?</h3>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center py-3">
+                        <img src="images/gi-whitet-logo.png" width="150" alt="Logo">
+                    </div>
+                    <div id="content-git" class="col-xl-8 col-lg-8 col-md-8 col-sm-12 py-3">
+                        <p>Es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de archivos de código fuente. Su propósito es llevar registro de los cambios en archivos de computadora y coordinar el trabajo que varias personas realizan sobre archivos compartidos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="command">
+            <div class="container py-3">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-center">
+                        <div class="py-4">
+                            <h3>¿Quieres conocer más sobre Git?</h3>
+                            <br>
+                            <div class="text-justify">Conoce los comandos más comunes de Git, así podrás incursionar en este nuevo mundo con el cual lograras agilizar tus proyectos y tus equipos de trabajo.<br><br>Git plantea una gran libertad en la forma de trabajar en torno a un proyecto.</div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                        <div class="baguetteBoxOne gallery text-center">
+                            <a href="images/infografia.png" data-at-450="images/infografia.png" data-at-800="images/infografia.png" data-at-1366="images/infografia.png" data-at-1920="images/infografia.png" data-caption="">
+                                <img class="link-info img-infografia" src="images/git-thumbail.png" alt="Comandos más comunes de GIT">
+                            </a>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </section>
+        <section id="install">
+            <div class="container py-3">
+                <div class="row">
+                    <div class="col-12 py-2 mb-3 text-center">
+                        <h3>Proceso para instalar Git en tu equipo Windows</h3>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-4">
+                        <div class="mb-3 h-install-process">
+                            <strong>1.</strong> Accede a la página de Git, darle click al botón de <i>Downloads for Windows</i>.
+                        </div>
+                        <div class="p-3">
+                            <div class="baguetteBoxOne gallery text-center">
+                                <a href="images/install-process/1.png" data-at-450="images/install-process/1.png" data-at-800="images/install-process/1.png" data-at-1366="images/install-process/1.png" data-at-1920="images/install-process/1.png" data-caption="">
+                                    <img class="link-install-process img-fluid w100" src="images/install-process/1.png" alt="Primer paso">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-4">
+                        <div class="mb-3 h-install-process">
+                            <strong>2.</strong> Una vez descargada, damos click al archivo con el formato <i>git-version.exe</i>, y concedemos permisos.</i>.
+                        </div>
+                        <div class="p-3">
+                            <div class="baguetteBoxOne gallery text-center">
+                                <a href="images/install-process/2.png" data-at-450="images/install-process/2.png" data-at-800="images/install-process/2.png" data-at-1366="images/install-process/2.png" data-at-1920="images/install-process/2.png" data-caption="">
+                                    <img class="link-install-process img-fluid w100" src="images/install-process/2.png" alt="Segundo paso">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-4">
+                        <div class="mb-3 h-install-process">
+                            <strong>3.</strong> Aceptamos las opciones por defecto y darle Next <i>(siguiente)</i> a todo hasta que nos salga el botón de instalar.
+                        </div>
+                        <div class="p-3">
+                            <div class="baguetteBoxOne gallery text-center">
+                                <a href="images/install-process/3.png" data-at-450="images/install-process/3.png" data-at-800="images/install-process/3.png" data-at-1366="images/install-process31.png" data-at-1920="images/install-process/3.png" data-caption="">
+                                    <img class="link-install-process img-fluid w100" src="images/install-process/3.png" alt="Tercer paso">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-4">
+                        <div class="mb-3 h-install-process">
+                            <strong>4.</strong> Al finalizar la instalación, nos dará la opción de abrir <i>Git Bash</i> para finalizar</i>.
+                        </div>
+                        <div class="p-3">
+                            <div class="baguetteBoxOne gallery text-center">
+                                <a href="images/install-process/4.png" data-at-450="images/install-process/4.png" data-at-800="images/install-process/4.png" data-at-1366="images/install-process/4.png" data-at-1920="images/install-process/4.png" data-caption="">
+                                    <img class="link-install-process img-fluid w100" src="images/install-process/4.png" alt="Cuarto paso">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-4">
+                        <div class="mb-3 h-install-process">
+                            <strong>5.</strong> Una vez finalizada la instalación nos mostrara lo que sera la terminal que usaremos para ingresar comandos Unix y de Git sobre todo</i>.
+                        </div>
+                        <div class="p-3">
+                            <div class="baguetteBoxOne gallery text-center">
+                                <a href="images/install-process/5.png" data-at-450="images/install-process/5.png" data-at-800="images/install-process/5.png" data-at-1366="images/install-process/5.png" data-at-1920="images/install-process/5.png" data-caption="">
+                                    <img class="link-install-process img-fluid w100" src="images/install-process/5.png" alt="Quinto paso">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="github">
+            <div class="container py-3">
+                <h3 class="text-center">GitHub Pages</h3>
+                <div class="py-3 text-justify">
+                    <p>GitHub Pages es un servicio de alojamiento de sitio estático que toma archivos HTML, CSS y JavaScript directamente desde un repositorio en GitHub, opcionalmente ejecuta los archivos a través de un proceso de complilación y publica un sitio web. Puedes alojar tu sitio en el dominio github.io de GitHub o en tu propio dominio personalizado</p>
+                </div>
+                <br>
+                <h3 class="text-center">Subir sitio web a GitHub Pages</h3>
+                <br>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-4">
+                        <div class="mb-3 h-upload-process text-justify">
+                            <strong>1.</strong> Dirígete a GitHub y crea un nuevo repositorio denominado <i>username.github.io</i>, donde username es su nombre de usuario (o nombre de organización) en GitHub.
+                        </div>
+                        <div class="p-3">
+                            <div class="baguetteBoxOne gallery text-center">
+                                <a href="images/upload-github-pages/1.png" data-at-450="images/upload-github-pages/1.png" data-at-800="images/upload-github-pages/1.png" data-at-1366="images/upload-github-pages/1.png" data-at-1920="images/upload-github-pages/1.png" data-caption="">
+                                    <img class="link-install-process img-fluid w100" src="images/upload-github-pages/1.png" alt="Primer paso de carga">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-4">
+                        <div class="mb-3 h-upload-process text-justify">
+                            <strong>2.</strong> Enlazamos el repositorio creado con la carpeta del proyecto a cargar, el proyecto debe contar con un archivo <i>index.html</i>.
+                        </div>
+                        <div class="p-3">
+                            <div class="baguetteBoxOne gallery text-center">
+                                <a href="images/upload-github-pages/2.png" data-at-450="images/upload-github-pages/2.png" data-at-800="images/upload-github-pages/2.png" data-at-1366="images/upload-github-pages/2.png" data-at-1920="images/upload-github-pages/2.png" data-caption="">
+                                    <img class="link-install-process img-fluid w100" src="images/upload-github-pages/2.png" alt="Segundo paso de carga">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-4">
+                        <div class="mb-3 h-upload-process text-justify">
+                            <strong>3.</strong> Agregue, confirme y cargue los archivos de la carpeta del proyecto al repositorio.
+                        </div>
+                        <div class="p-3">
+                            <div class="baguetteBoxOne gallery text-center">
+                                <a href="images/upload-github-pages/3.png" data-at-450="images/upload-github-pages/3.png" data-at-800="images/upload-github-pages/3.png" data-at-1366="images/upload-github-pages/3.png" data-at-1920="images/upload-github-pages/3.png" data-caption="">
+                                    <img class="link-install-process img-fluid w100" src="images/upload-github-pages/3.png" alt="Tercer paso de carga">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-4">
+                        <div class="mb-3 h-upload-process text-justify">
+                            <strong>4.</strong> Listo ahora acceda al repositorio creado, atraves de la ruta <i>https://username.github.io</i>, donde username es su nombre de usuario (o nombre de organización) en GitHub y compruebe que si página se cargo correctamente.
+                        </div>
+                        <div class="p-3">
+                            <div class="baguetteBoxOne gallery text-center">
+                                <a href="images/upload-github-pages/4.png" data-at-450="images/upload-github-pages/4.png" data-at-800="images/upload-github-pages/4.png" data-at-1366="images/upload-github-pages/4.png" data-at-1920="images/upload-github-pages/4.png" data-caption="">
+                                    <img class="link-install-process img-fluid w100" src="images/upload-github-pages/4.png" alt="Cuarto paso de carga">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="bg-git py-2">
+            <p class="text-foot-git">&copy;&nbsp;Victor López - LR180820 | 2020</p>
+        </footer>
+        <script src="js/jquery-3.5.1.slim.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/baguetteBox.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            baguetteBox.run('.baguetteBoxOne', {
+                buttons: false
+            });
+        </script>
+    </body>
 </html>
