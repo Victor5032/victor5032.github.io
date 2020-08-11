@@ -92,7 +92,7 @@ html, body {
     align-items: center;
 }
 
-#command {
+#command, #graphics {
     background-color: #de4c36;
     color: #FDFDFD;
 }
@@ -154,7 +154,7 @@ html, body {
 
 .text-foot-git {
     text-align: center;
-    color: #FDFDFD;
+    color: #2B2C2F;
     font-size: 15px;
     padding: 10px;
 }
@@ -163,4 +163,10 @@ html, body {
     margin: 0 !important;
 }
 
+#myChart {
+    background-color: #fff;
+    padding: 15px 25px;
+    border-radius: 15px;
+    color: #2B2C2F !important;
+}
 

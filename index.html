@@ -38,6 +38,9 @@
                     <li class="nav-item">
                         <a id="github-option" class="nav-link" href="#github">GitHub Pages</a>
                     </li>
+                    <li class="nav-item">
+                        <a id="graphics-option" class="nav-link" href="#graphics">Servicios web</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -255,14 +258,31 @@
                 </div>
             </div>
         </section>
-        <footer class="bg-git py-2">
+        <section id="graphics">
+            <div class="container py-3">
+                <h3 class="text-center">Servicios web de control de versiones más usados</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 p-5">
+                            <canvas id="myChart" width="200" height="200"></canvas>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 d-flex justify-content-center" style="align-items: center;">
+                            <p class="text-justify">GitHub, BitBucket y GitLab son servicios web de colaboración de código y control de versiones que ofrecen administración de repositorios. Cada uno tiene su parte de fans, aunque GitHub es de lejos el más utilizado de los tres. De los tres, sólo GitLab es de código abierto, aunque los tres admiten proyectos de código abierto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="py-2">
             <p class="text-foot-git">&copy;&nbsp;Victor López - LR180820 | 2020</p>
         </footer>
         <script src="js/jquery-3.5.1.slim.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/baguetteBox.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/chart.js"></script>
         <script>
             baguetteBox.run('.baguetteBoxOne', {
                 buttons: false

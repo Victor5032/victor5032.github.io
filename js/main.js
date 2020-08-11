@@ -3,6 +3,7 @@ var git = document.getElementById('git-option');
 var command = document.getElementById('command-option');
 var install = document.getElementById('install-option');
 var github = document.getElementById('github-option');
+var graphics = document.getElementById('graphics-option');
 
 cvs.addEventListener('click', function() {
     cvs.classList.add('active');
@@ -10,6 +11,7 @@ cvs.addEventListener('click', function() {
     command.classList.remove('active');
     install.classList.remove('active');
     github.classList.remove('active');
+    graphics.classList.remove('active');
 });
 
 git.addEventListener('click', function() {
@@ -18,6 +20,7 @@ git.addEventListener('click', function() {
     command.classList.remove('active');
     install.classList.remove('active');
     github.classList.remove('active');
+    graphics.classList.remove('active');
 });
 
 command.addEventListener('click', function() {
@@ -26,6 +29,7 @@ command.addEventListener('click', function() {
     command.classList.add('active');
     install.classList.remove('active');
     github.classList.remove('active');
+    graphics.classList.remove('active');
 });
 
 install.addEventListener('click', function() {
@@ -34,6 +38,7 @@ install.addEventListener('click', function() {
     command.classList.remove('active');
     install.classList.add('active');
     github.classList.remove('active');
+    graphics.classList.remove('active');
 });
 
 github.addEventListener('click', function() {
@@ -42,5 +47,16 @@ github.addEventListener('click', function() {
     command.classList.remove('active');
     install.classList.remove('active');
     github.classList.add('active');
+    graphics.classList.remove('active');
 });
+
+github.addEventListener('click', function() {
+    cvs.classList.remove('active');
+    git.classList.remove('active');
+    command.classList.remove('active');
+    install.classList.remove('active');
+    github.classList.remove('active');
+    graphics.classList.add('active');
+});
+
 // alert(url);
